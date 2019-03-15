@@ -1,0 +1,29 @@
+// ------------------------------------------------------------------
+// Transitive dependencies of this project determined from the
+// maven pom organized by organization.
+// ------------------------------------------------------------------
+
+Apache XML-RPC Server Library
+
+
+From: 'an unknown organization'
+  - Unnamed - log4j:log4j:jar:1.2.12  log4j:log4j:jar:1.2.12
+
+
+From: 'Apache Software Foundation' (http://www.apache.org/)
+  - Apache WebServices Common Utilities (http://ws.apache.org/commons/util) org.apache.ws.commons.util:ws-commons-util:jar:1.0.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - XML Commons External Components XML APIs (http://xml.apache.org/commons/#external) xml-apis:xml-apis:jar:1.0.b2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'The Apache Software Foundation' (http://jakarta.apache.org)
+  - Logging (http://jakarta.apache.org/commons/${pom.artifactId.substring(8)}/) commons-logging:commons-logging:jar:1.1
+    License: The Apache Software License, Version 2.0  (/LICENSE.txt)
+
+From: 'The Apache Software Foundation' (http://www.apache.org/)
+  - Apache XML-RPC Common Library (http://ws.apache.org/xmlrpc/xmlrpc-common) org.apache.xmlrpc:xmlrpc-common:jar:3.1.3
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+
+

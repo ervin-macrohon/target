@@ -1,0 +1,12 @@
+Picked up JAVA_TOOL_OPTIONS: -javaagent:"/Users/ervinmac/Downloads/remoteswinglibrary-2.0.3/target/remoteswinglibrary-2.0.3.jar"=127.0.0.1:50141:DEBUG
+objc[2223]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/bin/java (0x10099c4c0) and /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/libinstrument.dylib (0x1021bc4e0). One of the two will be used. Which one is undefined.
+Trying to connect to Class:javax.swing.JFrame Name:frame0 Visible:false AppContext:sun.awt.AppContext[threadGroup=system]
+Trying to connect to Class:javax.swing.JFrame Name:frame0 Visible:false AppContext:sun.awt.AppContext[threadGroup=system]
+Trying to connect to Class:javax.swing.JFrame Name:frame0 Visible:true AppContext:sun.awt.AppContext[threadGroup=system]
+Connected to Class:javax.swing.JFrame Name:frame0 Visible:true AppContext:sun.awt.AppContext[threadGroup=system]
+log4j:WARN No appenders could be found for logger (org.robotframework.remoteserver.RemoteServer).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+2019-03-15 15:41:15.297:INFO:oejs.Server:jetty-7.x.y-SNAPSHOT
+2019-03-15 15:41:15.320:INFO:oejsh.ContextHandler:started o.e.j.s.ServletContextHandler{/,null}
+2019-03-15 15:41:15.416:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:50142

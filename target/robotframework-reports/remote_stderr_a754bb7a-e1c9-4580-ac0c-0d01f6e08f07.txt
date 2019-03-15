@@ -1,0 +1,8 @@
+Picked up JAVA_TOOL_OPTIONS: -javaagent:"/Users/ervinmac/Downloads/remoteswinglibrary-2.0.3/target/remoteswinglibrary-2.0.3.jar"=127.0.0.1:50141
+objc[2225]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/bin/java (0x10748d4c0) and /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/libinstrument.dylib (0x1075034e0). One of the two will be used. Which one is undefined.
+log4j:WARN No appenders could be found for logger (org.robotframework.remoteserver.RemoteServer).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+2019-03-15 15:41:24.107:INFO:oejs.Server:jetty-7.x.y-SNAPSHOT
+2019-03-15 15:41:24.130:INFO:oejsh.ContextHandler:started o.e.j.s.ServletContextHandler{/,null}
+2019-03-15 15:41:24.227:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:50518

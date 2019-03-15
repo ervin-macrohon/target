@@ -10,7 +10,7 @@ static import junit.framework.Assert.*;
 
 Component component(referenceID) {
     return reference(referenceID).getComponent();
-}       
+}
 
 ComponentReference reference(referenceID) {
     return resolver.getComponentReference(referenceID);

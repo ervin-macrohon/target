@@ -21,33 +21,31 @@ import org.robotframework.remoteswinglibrary.remote.DaemonRemoteServer;
 import org.robotframework.swing.SwingLibrary;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.net.Socket;
 import java.util.Map;
 
 
 public class ServerThread implements Runnable {
-
-    String host;
-    int port;
+    int apport;
     boolean debug;
+    RobotConnection robotConnection;
 
-    public ServerThread(String host, int port, boolean debug) {
-        this.host = host;
-        this.port = port;
+    public ServerThread(RobotConnection robotConnection,  int apport, boolean debug) {
+        this.robotConnection = robotConnection;
+        this.apport = apport;
         this.debug = debug;
     }
 
     public void run()  {
         try {
             RemoteServer server = new DaemonRemoteServer();
-            server.putLibrary("/RPC2", new SwingLibrary());
+            SwingLibrary swingLibrary = SwingLibrary.instance == null ? new SwingLibrary() : SwingLibrary.instance;
+            server.putLibrary("/RPC2", swingLibrary);
             server.putLibrary("/services", new ServicesLibrary());
-            server.setPort(0);
+            server.setPort(apport);
             server.setAllowStop(true);
             server.start();
             Integer actualPort = server.getLocalPort();
-            notifyPort(actualPort, host, port);
+            notifyPort(actualPort);
         } catch (Exception e) {
             if (debug) {
                 e.printStackTrace();
@@ -57,12 +55,10 @@ public class ServerThread implements Runnable {
         }
     }
 
-    private static void notifyPort(final Integer portToNotify, final String serverHost, final Integer serverPort) throws IOException {
-        Socket echoSocket = new Socket(serverHost, serverPort);
-        PrintWriter outToServer = new PrintWriter(echoSocket.getOutputStream(), true);
-        outToServer.write(portToNotify.toString() + ":" + getName());
-        outToServer.close();
-        echoSocket.close();
+    private void notifyPort(final Integer portToNotify) throws IOException {
+        robotConnection.connect();
+        robotConnection.send("PORT:" + portToNotify.toString() + ":" + getName());
+        robotConnection.close();
     }
 
     private static String getName() {

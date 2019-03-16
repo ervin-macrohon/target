@@ -1,10 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
-  <groupId>org.robotframework.remoteswinglibrary</groupId>
+  <parent>
+    <groupId>org.sonatype.oss</groupId>
+    <artifactId>oss-parent</artifactId>
+    <version>7</version>
+  </parent>
+  <groupId>org.robotframework</groupId>
   <artifactId>remoteswinglibrary</artifactId>
-  <version>2.0.3</version>
+  <version>2.2.3</version>
   <packaging>jar</packaging>
 
   <name>robotframework-remoteswinglibrary</name>
@@ -41,7 +45,7 @@
     <dependency>
     <groupId>org.robotframework</groupId>
     <artifactId>swinglibrary</artifactId>
-    <version>1.9.4</version>
+    <version>1.9.8</version>
     </dependency>
   </dependencies>
 
@@ -52,8 +56,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.1</version>
         <configuration>
-          <source>1.5</source>
-          <target>1.5</target>
+          <source>1.6</source>
+          <target>1.6</target>
         </configuration>
       </plugin>
       <plugin>
@@ -117,7 +121,7 @@
                 <include>abbot:abbot</include>
                 <include>gnu-regexp:gnu-regexp</include>
                 <include>junit:junit</include>
-                <include>jretrofit:jretrofit</include>
+                <include>org.jretrofit:jretrofit</include>
                 <include>commons-collections:commons-collections</include>
                 <include>com.thoughworks.parameter:parameter</include>
               </includes>
@@ -198,7 +202,7 @@
         <plugin>
             <groupId>org.robotframework</groupId>
             <artifactId>robotframework-maven-plugin</artifactId>
-            <version>1.4.4</version>
+            <version>1.4.7</version>
             <executions>
               <execution>
                 <goals>
@@ -213,6 +217,48 @@
                     <extraPathDirectory>${basedir}/src/test/robotframework/acceptance/webstart</extraPathDirectory>
                 </extraPathDirectories>
             </configuration>
+            <dependencies>
+              <dependency>
+                <groupId>com.sun</groupId>
+                <artifactId>tools</artifactId>
+                <version>${java.version}</version>
+                <scope>system</scope>
+                <systemPath>${project.basedir}/pom.xml</systemPath>
+              </dependency>
+            </dependencies>
+        </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>1.4</version>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>install</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+        <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>1.1.1</version>
+            <executions>
+                <execution>
+                    <phase>compile</phase>
+                    <goals>
+                        <goal>java</goal>
+                    </goals>
+                    <configuration>
+                        <mainClass>org.robotframework.remoteswinglibrary.build.SwingLibraryKeywords</mainClass>
+                        <arguments>
+                            <argument>target/classes/swinglibrary.py</argument>
+                        </arguments>
+                    </configuration>
+                </execution>
+            </executions>
         </plugin>
     </plugins>
       <resources>

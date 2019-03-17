@@ -11,8 +11,8 @@ ${WEBSTART DIR}=    ${CURDIR}/webstart
 
 *** Test Cases ***
 Webstart Test
+    Start Application    test-app    javaws ${WEBSTART DIR}/test-app/test-application.jnlp    60   close_security_dialogs=True
     [Timeout]    60 seconds
-    Start Application    test-app    javaws -verbose ${WEBSTART DIR}/test-app/test-application.jnlp    60   close_security_dialogs=True
     Set Jemmy Timeouts     15
     Select Main Window
     List Components In Context

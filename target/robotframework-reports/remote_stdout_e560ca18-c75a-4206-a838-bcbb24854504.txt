@@ -1,1 +1,0 @@
-Using org.netbeans.jemmy.drivers.APIDriverInstaller driver installer

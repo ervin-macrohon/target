@@ -1,0 +1,9 @@
+org\robotframework\remoteswinglibrary\agent\FindAppContextWithWindow.class
+org\robotframework\remoteswinglibrary\agent\ServicesLibrary.class
+org\robotframework\remoteswinglibrary\build\SwingLibraryKeywords.class
+org\robotframework\remoteswinglibrary\agent\JavaAgent.class
+org\robotframework\remoteswinglibrary\agent\FindAppContextWithWindow$SecurityDialogAccepter.class
+org\robotframework\remoteswinglibrary\remote\DaemonRemoteServer.class
+org\robotframework\remoteswinglibrary\ReadJavaVersion.class
+org\robotframework\remoteswinglibrary\agent\RobotConnection.class
+org\robotframework\remoteswinglibrary\agent\ServerThread.class

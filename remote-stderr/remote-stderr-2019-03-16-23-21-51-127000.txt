@@ -1,2 +1,0 @@
-Picked up JAVA_TOOL_OPTIONS: -Duser.language=en -Duser.country=US -javaagent:"C:\Users\ervin.macrohon\workspace\remoteswinglibrary-master\target\remoteswinglibrary-2.2.3.jar"=127.0.0.1:53106:DEBUG:CLOSE_SECURITY_DIALOGS
-Picked up _JAVA_OPTIONS: -Djava.security.policy="c:\users\ervin~1.mac\appdata\local\temp\grant_all_6dotf0.policy"
